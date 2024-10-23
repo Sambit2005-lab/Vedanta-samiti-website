@@ -1,5 +1,105 @@
-p {
-    color: red;
-    font-size: 20px;
-    background-color: yellow;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    
 }
+
+header {
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+    padding: 4px;
+    color: antiquewhite;
+}
+
+
+/* Base styles */
+nav a {
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(208, 201, 201);
+  margin-left: 30px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #fff;
+}
+
+/* Gradient navbar */
+.gradient-navbar {
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;  /* Ensures it doesn't overflow */
+  flex-wrap: wrap;  /* Wrap content on smaller screens */
+  gap: 15px;        /* Adds space between links */
+}
+
+/* Optional: Add hover effect */
+.gradient-navbar a:hover {
+  color: #fff;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  nav a {
+    font-size: 18px;
+    margin-left: 20px;
+  }
+
+ /* Navbar link styles */
+.gradient-navbar a {
+  font-size: 16px;
+  margin-left: 10px;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+@media (max-width: 320px) {
+  .gradient-navbar a {
+    font-size: 14px;  /* Further reduce font size on very small screens */
+  }
+}
+
+.gradient-navbar a {
+  word-spacing: 2px; /* Ensures consistent spacing between words */
+  padding: 8px 10px; /* Adjust padding to prevent wrapping */
+}
+}
+
+  .gradient-navbar a {
+    width: 100%;             /* Full-width links */
+    text-align: center;
+  }
+
+
+
+section{
+    min-height: 100vh;
+}
+
+#home {
+    background-color: #009df8;
+    
+}
+
+
