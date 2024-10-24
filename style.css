@@ -212,5 +212,37 @@ section{
   padding-left: 10%;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .slide-in1, .slide-in2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .slide-img1, .slide-img2 {
+    padding-left: 0;
+    width: 80%; /* Adjust image size for smaller screens */
+  }
+
+  .slide1-description, .slide2-description {
+    padding: 20px; /* Reduce padding on smaller screens */
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide1-description, .slide2-description {
+    font-size: 16px;
+  }
+
+  .slide-img1, .slide-img2 {
+    width: 100%;
+  }
+
+  .slide-text1, .slide-text2 {
+    transition: transform 1.5s; /* Faster animation on smaller screens */
+  }
+}
 
 
