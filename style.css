@@ -102,4 +102,115 @@ section{
     
 }
 
+#aboutus{
+  background-color: rgb(245, 229, 210);
+
+
+}
+#calender{
+  background-color: #00c8ff;
+}
+
+#events {
+    background-color: white;
+}
+#alumni {
+    background-color: #00c8ff;
+}
+
+#contactus {
+    background-color: #009df8;
+}
+
+
+
+
+
+
+
+
+/* Base Styles */
+.slide-in {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.slide-in1, .slide-in2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-color: aliceblue;
+  border-width: 0.5px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide-in1 {
+  border-bottom: solid;
+}
+
+.slide-in2 {
+  border-top: solid;
+}
+
+.slide-in1:hover, .slide-in2:hover {
+  opacity: 1;
+}
+
+/* Animation for Images and Text */
+.slide-in1 .slide-img1 {
+  transform: translateX(-120%);
+  transition: transform 2s;
+}
+
+.slide-in2 .slide-img2 {
+  transform: translateX(120%);
+  transition: transform 2s;
+}
+
+.slide-in1:hover .slide-img1,
+.slide-in2:hover .slide-img2 {
+  transform: translateX(0);
+}
+
+.slide-text1, .slide-text2 {
+  transition: transform 2s;
+}
+
+.slide-text1 {
+  transform: translateX(120%);
+}
+
+.slide-text2 {
+  transform: translateX(-120%);
+}
+
+.slide-in1:hover .slide-text1,
+.slide-in2:hover .slide-text2 {
+  transform: translateX(0);
+}
+
+.about-us-header {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.slide-in1:hover .about-us-header,
+.slide-in2:hover .about-us-header {
+  opacity: 1;
+}
+
+.slide1-description, .slide2-description {
+  padding: 40px 80px;
+  font-size: 20px;
+  flex: 2;
+}
+
+.slide-img1, .slide-img2 {
+  flex: 1;
+  padding-left: 10%;
+}
+
+
 
