@@ -928,7 +928,7 @@ align-items: center;
   left: 5px;
   transform: translateY(-50%);
   width: 19%; /* Adjust size as needed */
-  height: auto;
+  max-height: 150%;
   max-width: 100%;
  
   z-index: 2; /* Ensure it appears above background elements */
@@ -940,7 +940,7 @@ align-items: center;
   right: 5px;
   transform: translateY(-50%);
   width: 19%; /* Adjust size as needed */
-  height: auto;
+  max-height: 150%;
   max-width: 100%;
  
   z-index: 2; /* Ensure it appears above background elements */
