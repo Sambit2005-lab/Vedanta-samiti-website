@@ -116,3 +116,19 @@ window.addEventListener("scroll", () => {
     // Update the image transform with the new scale
     image.style.transform = `translate(-50%, -50%) scale(${scaleValue})`;
 });
+
+
+
+
+// Navbar
+function showSidebar(event) {
+    event.preventDefault(); // Prevent page refresh
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'flex';
+}
+
+function hideSidebar(event) {
+    event.preventDefault(); // Prevent page refresh
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'none';
+}
