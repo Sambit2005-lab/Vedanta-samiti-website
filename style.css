@@ -680,4 +680,70 @@ button.next:hover {
 
 
 
+/* home setion new update */
+
+
+.left-image {
+  position: absolute;
+  top: 10%;
+  left: 5px;
+  transform: translateY(-50%);
+  width: 19%; /* Adjust size as needed */
+  height: auto;
+  max-width: 100%;
+ 
+  z-index: 2; /* Ensure it appears above background elements */
+}
+
+.right-image {
+  position: absolute;
+  top: 10%;
+  right: 5px;
+  transform: translateY(-50%);
+  width: 19%; /* Adjust size as needed */
+  height: auto;
+  max-width: 100%;
+ 
+  z-index: 2; /* Ensure it appears above background elements */
+}
+
+
+
+
+.bottom-image {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%; /* Adjust size as needed */
+  height: auto;
+  max-width: 100%;
+ 
+  z-index: 2; /* Ensure it appears above background elements */
+  transition: transform 0.1s linear;
+
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  height: 100vh;            /* Full height of the viewport */
+  margin: 0;                /* Remove default margins */
+  padding-bottom: 80%;       /* Push the image upward */
+}
+
+.logo-image {
+  max-width: 70%;  /* Adjust size if needed */
+  height: 10%;
+}
+
+
+
+
+
+
+
+
+
 
