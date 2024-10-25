@@ -96,3 +96,23 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(slideIndex);
     autoSlide();
 });
+
+
+const image = document.querySelector(".bottom-image");
+
+window.addEventListener("scroll", () => {
+    // Calculate the current scroll percentage
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.body.scrollHeight;
+
+    const scrollPercent = scrollPosition / (documentHeight - windowHeight);
+
+    // Set the scale based on the scroll percentage (1 to 1.5)
+    const minScale = 1;
+    const maxScale = 5; // Adjust for how much zoom you want
+    const scaleValue = minScale + (maxScale - minScale) * scrollPercent;
+
+    // Update the image transform with the new scale
+    image.style.transform = `translate(-50%, -50%) scale(${scaleValue})`;
+});
