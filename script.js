@@ -46,77 +46,49 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//meet our team
-
-
-let slideIndex = 0;
-let autoSlideInterval;
-const slides = document.querySelectorAll('.carousel-slide img');
-const dots = document.querySelectorAll('.dot');
-const slideWidth = slides[0].clientWidth;
-
-function showSlide(index) {
-    const slideContainer = document.querySelector('.carousel-slide');
-    slideContainer.style.transform = `translateX(${-index * slideWidth}px)`;
-
-    // Update active dot
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
-}
-
-function nextSlide() {
-    slideIndex = (slideIndex + 1) % slides.length;
-    showSlide(slideIndex);
-    resetAutoSlide();
-}
-
-function prevSlide() {
-    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-    showSlide(slideIndex);
-    resetAutoSlide();
-}
-
-function currentSlide(index) {
-    slideIndex = index - 1;
-    showSlide(slideIndex);
-    resetAutoSlide();
-}
-
-function autoSlide() {
-    autoSlideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
-}
-
-function resetAutoSlide() {
-    clearInterval(autoSlideInterval);
-    autoSlide();
-}
-
-// Initialize the carousel
-document.addEventListener('DOMContentLoaded', () => {
-    showSlide(slideIndex);
-    autoSlide();
-});
 
 
 const image = document.querySelector(".bottom-image");
 
 window.addEventListener("scroll", () => {
-    // Calculate the current scroll percentage
+    // Get the scroll position and the available scrollable height
     const scrollPosition = window.scrollY;
     const windowHeight = window.innerHeight;
-    const documentHeight = document.body.scrollHeight;
+    const documentHeight = document.documentElement.scrollHeight;
 
     const scrollPercent = scrollPosition / (documentHeight - windowHeight);
 
-    // Set the scale based on the scroll percentage (1 to 1.5)
+    // Adjust the scaling range (1 to 2 for subtle effect)
     const minScale = 1;
-    const maxScale = 5; // Adjust for how much zoom you want
+    const maxScale = 3; // Adjust the upper bound for scaling if needed
+
     const scaleValue = minScale + (maxScale - minScale) * scrollPercent;
 
-    // Update the image transform with the new scale
+    // Apply the transform with scaling
     image.style.transform = `translate(-50%, -50%) scale(${scaleValue})`;
 });
 
+
+let ticking = false;
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            const scrollPercent = scrollPosition / (documentHeight - windowHeight);
+            const scaleValue = 1 + 4 * scrollPercent; // 1 to 5 scaling
+
+            image.style.transform = `translate(-50%, -50%) scale(${scaleValue})`;
+
+            ticking = false;
+        });
+
+        ticking = true;
+    }
+});
 
 
 
